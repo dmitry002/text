@@ -40,7 +40,21 @@ def print_words():
 
 # Додаткова функція
 def show_info():
-    pass
+    file_1_r = Open(file1_name, "r")
+    if file_1_r != None:
+        lines = file_1_r.readlines()
+        file_1_r.close()
+        print("Кількість рядків у TF1_1.txt:", len(lines))
+    file_2_r = Open(file2_name, "r")
+    if file_2_r != None:
+        words = file_2_r.read().split()
+        file_2_r.close()
+        print("Кількість слів у TF1_2.txt:", len(words))
+        longest = ""
+        for word in words:
+            if len(word) > len(longest):
+                longest = word
+        print("Найдовше слово:", longest)
 
 
 create_file()
