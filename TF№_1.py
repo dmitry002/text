@@ -32,10 +32,15 @@ def create_file():
 def write_words():
     pass
 
-
-# Читання TF1_2 і друк по рядках 
+# Коментар Юлії - реалізовано частину В
 def print_words():
-    pass
+    print("Слова:")
+    file_3_r = Open(file2_name, "r")
+    if file_3_r != None:
+        for line in file_3_r.read().split():
+            print(line)
+        file_3_r.close()
+        print("Файл TF1_2.txt закрито!")
 
 
 # Додаткова функція
