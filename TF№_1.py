@@ -30,7 +30,17 @@ def create_file():
 
 #  Читання TF1_1 і запис кожного слова в окремий рядок TF1_2 
 def write_words():
-    pass
+    file_2_r = Open(file1_name, "r")
+    file_2_w = Open(file2_name, "w")
+    if file_2_r != None and file_2_w != None:
+        text = file_2_r.read()
+        for sign in ".,!?:;-":
+            text = text.replace(sign, " ")
+        for word in text.split():
+            file_2_w.write(word + "\n")
+        file_2_r.close()
+        file_2_w.close()
+        print("Файли закрито!")
 
 # Коментар Юлії - реалізовано частину В
 def print_words():
